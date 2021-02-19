@@ -7,7 +7,7 @@ import NextLink from "next/link";
 const Navbar:React.FC = () => {
   return (
     <Stack>
-      <HStack as="nav" fontSize="lg" p={4} spacing={0}>
+      <HStack as="nav" fontSize="lg" py={4} spacing={0}>
         <NextLink href="/">
           <Link fontWeight='bold'>
           Joshuanatanielm
