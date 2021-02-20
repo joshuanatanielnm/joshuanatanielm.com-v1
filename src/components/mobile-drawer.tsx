@@ -36,19 +36,14 @@ const MobileDrawer:React.FC = () => {
                     About
                   </Link>
                 </NextLink>
-                <NextLink href="/project">
+                <NextLink href="/projects">
                   <Link>
                     Project
                   </Link>
                 </NextLink>
-                <NextLink href="/talks">
+                <NextLink href="/talk">
                   <Link>
                     Talks
-                  </Link>
-                </NextLink>
-                <NextLink href="/blog">
-                  <Link>
-                    Blog
                   </Link>
                 </NextLink>
               </VStack>

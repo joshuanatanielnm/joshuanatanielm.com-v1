@@ -18,10 +18,11 @@ const ProjectList:React.FC<ProjectListProps> = ({ project }) => {
           project.map((v, i) => (
             <React.Fragment key={v.sys?.id || v.slug}>
               <NextLink href={`/project/${v.slug}`}>
-                <HStack cursor='pointer' bgColor='blue.900' color='white' w='full' p={4} borderRadius='lg' _hover={{scale:'1,2'}}>
+                <HStack cursor='pointer' bgColor='blue.800' color='white' w='full' p={4} borderRadius='lg' _hover={{bgColor:'blue.900'}}>
                   <Box>
                     <Heading as='h3' size='lg'>{v.name}</Heading>
                     <Text>{v.shortDescription}</Text>
+                    <Text mt='2'>Category : {v.category}</Text>
                   </Box>
                   <Spacer/>
                   <Box fontSize='3xl'>

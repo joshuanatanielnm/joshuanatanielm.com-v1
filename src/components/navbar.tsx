@@ -1,45 +1,39 @@
 import * as React from "react";
 
-import { Container, Divider, HStack, Link, Spacer, Stack, } from "@chakra-ui/react";
+import {
+  Container,
+  Divider,
+  HStack,
+  Link,
+  Spacer,
+  Stack,
+} from "@chakra-ui/react";
 
 import NextLink from "next/link";
 
-const Navbar:React.FC = () => {
+const Navbar: React.FC = () => {
   return (
     <Stack>
       <HStack as="nav" fontSize="lg" py={4} spacing={0}>
         <NextLink href="/">
-          <Link fontWeight='bold'>
-          Joshuanatanielm
-        </Link>
-      </NextLink>
-      <Spacer/>
-        <HStack d={{ base: "none", md: "flex" }} spacing='20px'>
+          <Link fontWeight="bold">Joshuanatanielm</Link>
+        </NextLink>
+        <Spacer />
+        <HStack d={{ base: "none", md: "flex" }} spacing="20px">
           <NextLink href="/about">
-            <Link>
-              About
-            </Link>
+            <Link>About</Link>
           </NextLink>
-          <NextLink href="/project">
-            <Link>
-              Project
-            </Link>
+          <NextLink href="/projects">
+            <Link>Projects</Link>
           </NextLink>
-          <NextLink href="/talks">
-            <Link>
-              Talks
-            </Link>
-          </NextLink>
-          <NextLink href="/blog">
-            <Link>
-              Blog
-            </Link>
+          <NextLink href="/talk">
+            <Link>Talks</Link>
           </NextLink>
         </HStack>
       </HStack>
       <Divider />
     </Stack>
-  )
-}
+  );
+};
 
 export default Navbar;

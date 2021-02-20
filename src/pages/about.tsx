@@ -1,19 +1,19 @@
 import { Box, Button, Divider, Heading, Link, Stack, Text, VStack } from '@chakra-ui/react';
 
 import Head from 'next/head'
-import Image from 'next/image'
+import IlusProfile from '@/components/ilus-profile'
 import React from 'react'
 
-const About = () => {
+const About:React.FC = () => {
   return (
     <>
       <Head>
         <title>About</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Box fontFamily='poppins' bgGradient="linear(to-br, white, blue.100)"  borderRadius="xl" p={{base:8, md:24}} spacing={6}>
         <VStack textAlign='center' py='50px' spacing='24px'>
-          <Image src="/profileilus.png" alt="me" width="200" height="200" />
+          <IlusProfile />
           <Heading fontFamily='poppins' as='h1' size='2xl'>
             Hello i'am Jojo. 👋
           </Heading>

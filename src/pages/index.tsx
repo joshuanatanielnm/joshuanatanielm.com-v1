@@ -22,12 +22,13 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
+
 const Home: NextPage<HomePageProps> = ({ project, talks }) => {
   return (
     <>
       <Head>
         <title>joshuanatanielm</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Box fontFamily='poppins' >
         <VStack textAlign='center' py='50px' spacing='24px'>
@@ -50,7 +51,7 @@ const Home: NextPage<HomePageProps> = ({ project, talks }) => {
           <Box>
             <Heading as='h2' size='xl' mb={2}>Recent Projects</Heading>
             <ProjectList project={project}/>
-            <ViewAllButton title='See all projects' href='/project'/>
+            <ViewAllButton title='See all projects' href='/projects'/>
           </Box>
           <Box>
             <Heading as='h2' size='xl' mb={2}>Recent Talks</Heading>

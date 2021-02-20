@@ -32,10 +32,10 @@ export type Query = {
   __typename?: 'Query';
   asset?: Maybe<Asset>;
   assetCollection?: Maybe<AssetCollection>;
-  talks?: Maybe<Talks>;
-  talksCollection?: Maybe<TalksCollection>;
   project?: Maybe<Project>;
   projectCollection?: Maybe<ProjectCollection>;
+  talks?: Maybe<Talks>;
+  talksCollection?: Maybe<TalksCollection>;
 };
 
 
@@ -56,23 +56,6 @@ export type QueryAssetCollectionArgs = {
 };
 
 
-export type QueryTalksArgs = {
-  id: Scalars['String'];
-  preview?: Maybe<Scalars['Boolean']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type QueryTalksCollectionArgs = {
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-  preview?: Maybe<Scalars['Boolean']>;
-  locale?: Maybe<Scalars['String']>;
-  where?: Maybe<TalksFilter>;
-  order?: Maybe<Array<Maybe<TalksOrder>>>;
-};
-
-
 export type QueryProjectArgs = {
   id: Scalars['String'];
   preview?: Maybe<Scalars['Boolean']>;
@@ -87,6 +70,23 @@ export type QueryProjectCollectionArgs = {
   locale?: Maybe<Scalars['String']>;
   where?: Maybe<ProjectFilter>;
   order?: Maybe<Array<Maybe<ProjectOrder>>>;
+};
+
+
+export type QueryTalksArgs = {
+  id: Scalars['String'];
+  preview?: Maybe<Scalars['Boolean']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type QueryTalksCollectionArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  preview?: Maybe<Scalars['Boolean']>;
+  locale?: Maybe<Scalars['String']>;
+  where?: Maybe<TalksFilter>;
+  order?: Maybe<Array<Maybe<TalksOrder>>>;
 };
 
 /** Represents a binary file in a space. An asset can be any file type. */
@@ -279,6 +279,7 @@ export type Project = Entry & {
   slug?: Maybe<Scalars['String']>;
   longDescription?: Maybe<Scalars['String']>;
   shortDescription?: Maybe<Scalars['String']>;
+  category?: Maybe<Scalars['String']>;
 };
 
 
@@ -333,6 +334,12 @@ export type ProjectLongDescriptionArgs = {
 
 /** [See type definition](https://app.contentful.com/spaces/houvt9hwn2b5/content_types/project) */
 export type ProjectShortDescriptionArgs = {
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/houvt9hwn2b5/content_types/project) */
+export type ProjectCategoryArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
@@ -479,6 +486,91 @@ export type AssetCollection = {
   items: Array<Maybe<Asset>>;
 };
 
+export type ProjectFilter = {
+  sys?: Maybe<SysFilter>;
+  image_exists?: Maybe<Scalars['Boolean']>;
+  stack_exists?: Maybe<Scalars['Boolean']>;
+  stack_contains_all?: Maybe<Array<Maybe<Scalars['String']>>>;
+  stack_contains_some?: Maybe<Array<Maybe<Scalars['String']>>>;
+  stack_contains_none?: Maybe<Array<Maybe<Scalars['String']>>>;
+  name_exists?: Maybe<Scalars['Boolean']>;
+  name?: Maybe<Scalars['String']>;
+  name_not?: Maybe<Scalars['String']>;
+  name_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  name_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  name_contains?: Maybe<Scalars['String']>;
+  name_not_contains?: Maybe<Scalars['String']>;
+  linkWebsite_exists?: Maybe<Scalars['Boolean']>;
+  linkWebsite?: Maybe<Scalars['String']>;
+  linkWebsite_not?: Maybe<Scalars['String']>;
+  linkWebsite_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  linkWebsite_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  linkWebsite_contains?: Maybe<Scalars['String']>;
+  linkWebsite_not_contains?: Maybe<Scalars['String']>;
+  linkRepo_exists?: Maybe<Scalars['Boolean']>;
+  linkRepo?: Maybe<Scalars['String']>;
+  linkRepo_not?: Maybe<Scalars['String']>;
+  linkRepo_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  linkRepo_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  linkRepo_contains?: Maybe<Scalars['String']>;
+  linkRepo_not_contains?: Maybe<Scalars['String']>;
+  slug_exists?: Maybe<Scalars['Boolean']>;
+  slug?: Maybe<Scalars['String']>;
+  slug_not?: Maybe<Scalars['String']>;
+  slug_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug_contains?: Maybe<Scalars['String']>;
+  slug_not_contains?: Maybe<Scalars['String']>;
+  longDescription_exists?: Maybe<Scalars['Boolean']>;
+  longDescription?: Maybe<Scalars['String']>;
+  longDescription_not?: Maybe<Scalars['String']>;
+  longDescription_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  longDescription_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  longDescription_contains?: Maybe<Scalars['String']>;
+  longDescription_not_contains?: Maybe<Scalars['String']>;
+  shortDescription_exists?: Maybe<Scalars['Boolean']>;
+  shortDescription?: Maybe<Scalars['String']>;
+  shortDescription_not?: Maybe<Scalars['String']>;
+  shortDescription_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  shortDescription_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  shortDescription_contains?: Maybe<Scalars['String']>;
+  shortDescription_not_contains?: Maybe<Scalars['String']>;
+  category_exists?: Maybe<Scalars['Boolean']>;
+  category?: Maybe<Scalars['String']>;
+  category_not?: Maybe<Scalars['String']>;
+  category_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  category_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  category_contains?: Maybe<Scalars['String']>;
+  category_not_contains?: Maybe<Scalars['String']>;
+  OR?: Maybe<Array<Maybe<ProjectFilter>>>;
+  AND?: Maybe<Array<Maybe<ProjectFilter>>>;
+};
+
+export enum ProjectOrder {
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  LinkWebsiteAsc = 'linkWebsite_ASC',
+  LinkWebsiteDesc = 'linkWebsite_DESC',
+  LinkRepoAsc = 'linkRepo_ASC',
+  LinkRepoDesc = 'linkRepo_DESC',
+  SlugAsc = 'slug_ASC',
+  SlugDesc = 'slug_DESC',
+  LongDescriptionAsc = 'longDescription_ASC',
+  LongDescriptionDesc = 'longDescription_DESC',
+  ShortDescriptionAsc = 'shortDescription_ASC',
+  ShortDescriptionDesc = 'shortDescription_DESC',
+  CategoryAsc = 'category_ASC',
+  CategoryDesc = 'category_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
 /** [See type definition](https://app.contentful.com/spaces/houvt9hwn2b5/content_types/talks) */
 export type Talks = Entry & {
   __typename?: 'Talks';
@@ -596,82 +688,6 @@ export type TalksCollection = {
   items: Array<Maybe<Talks>>;
 };
 
-export type ProjectFilter = {
-  sys?: Maybe<SysFilter>;
-  image_exists?: Maybe<Scalars['Boolean']>;
-  stack_exists?: Maybe<Scalars['Boolean']>;
-  stack_contains_all?: Maybe<Array<Maybe<Scalars['String']>>>;
-  stack_contains_some?: Maybe<Array<Maybe<Scalars['String']>>>;
-  stack_contains_none?: Maybe<Array<Maybe<Scalars['String']>>>;
-  name_exists?: Maybe<Scalars['Boolean']>;
-  name?: Maybe<Scalars['String']>;
-  name_not?: Maybe<Scalars['String']>;
-  name_in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  name_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  name_contains?: Maybe<Scalars['String']>;
-  name_not_contains?: Maybe<Scalars['String']>;
-  linkWebsite_exists?: Maybe<Scalars['Boolean']>;
-  linkWebsite?: Maybe<Scalars['String']>;
-  linkWebsite_not?: Maybe<Scalars['String']>;
-  linkWebsite_in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  linkWebsite_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  linkWebsite_contains?: Maybe<Scalars['String']>;
-  linkWebsite_not_contains?: Maybe<Scalars['String']>;
-  linkRepo_exists?: Maybe<Scalars['Boolean']>;
-  linkRepo?: Maybe<Scalars['String']>;
-  linkRepo_not?: Maybe<Scalars['String']>;
-  linkRepo_in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  linkRepo_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  linkRepo_contains?: Maybe<Scalars['String']>;
-  linkRepo_not_contains?: Maybe<Scalars['String']>;
-  slug_exists?: Maybe<Scalars['Boolean']>;
-  slug?: Maybe<Scalars['String']>;
-  slug_not?: Maybe<Scalars['String']>;
-  slug_in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  slug_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  slug_contains?: Maybe<Scalars['String']>;
-  slug_not_contains?: Maybe<Scalars['String']>;
-  longDescription_exists?: Maybe<Scalars['Boolean']>;
-  longDescription?: Maybe<Scalars['String']>;
-  longDescription_not?: Maybe<Scalars['String']>;
-  longDescription_in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  longDescription_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  longDescription_contains?: Maybe<Scalars['String']>;
-  longDescription_not_contains?: Maybe<Scalars['String']>;
-  shortDescription_exists?: Maybe<Scalars['Boolean']>;
-  shortDescription?: Maybe<Scalars['String']>;
-  shortDescription_not?: Maybe<Scalars['String']>;
-  shortDescription_in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  shortDescription_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  shortDescription_contains?: Maybe<Scalars['String']>;
-  shortDescription_not_contains?: Maybe<Scalars['String']>;
-  OR?: Maybe<Array<Maybe<ProjectFilter>>>;
-  AND?: Maybe<Array<Maybe<ProjectFilter>>>;
-};
-
-export enum ProjectOrder {
-  NameAsc = 'name_ASC',
-  NameDesc = 'name_DESC',
-  LinkWebsiteAsc = 'linkWebsite_ASC',
-  LinkWebsiteDesc = 'linkWebsite_DESC',
-  LinkRepoAsc = 'linkRepo_ASC',
-  LinkRepoDesc = 'linkRepo_DESC',
-  SlugAsc = 'slug_ASC',
-  SlugDesc = 'slug_DESC',
-  LongDescriptionAsc = 'longDescription_ASC',
-  LongDescriptionDesc = 'longDescription_DESC',
-  ShortDescriptionAsc = 'shortDescription_ASC',
-  ShortDescriptionDesc = 'shortDescription_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
-}
-
 export type HomePageStaticPropsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -681,7 +697,7 @@ export type HomePageStaticPropsQuery = (
     { __typename?: 'ProjectCollection' }
     & { items: Array<Maybe<(
       { __typename?: 'Project' }
-      & Pick<Project, 'slug' | 'name' | 'linkWebsite' | 'shortDescription'>
+      & Pick<Project, 'slug' | 'name' | 'shortDescription' | 'category'>
       & { sys: (
         { __typename?: 'Sys' }
         & Pick<Sys, 'id'>
@@ -700,9 +716,105 @@ export type HomePageStaticPropsQuery = (
   )> }
 );
 
+export type ProjectStaticPropsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type ProjectStaticPropsQuery = (
+  { __typename?: 'Query' }
+  & { projectCollection?: Maybe<(
+    { __typename?: 'ProjectCollection' }
+    & { items: Array<Maybe<(
+      { __typename?: 'Project' }
+      & Pick<Project, 'slug' | 'name' | 'shortDescription' | 'category'>
+      & { sys: (
+        { __typename?: 'Sys' }
+        & Pick<Sys, 'id'>
+      ) }
+    )>> }
+  )> }
+);
+
+export type TalktStaticPropsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type TalktStaticPropsQuery = (
+  { __typename?: 'Query' }
+  & { talksCollection?: Maybe<(
+    { __typename?: 'TalksCollection' }
+    & { items: Array<Maybe<(
+      { __typename?: 'Talks' }
+      & Pick<Talks, 'name' | 'description' | 'date' | 'links'>
+      & { sys: (
+        { __typename?: 'Sys' }
+        & Pick<Sys, 'id'>
+      ) }
+    )>> }
+  )> }
+);
+
+export type ProjectPageStaticPropsQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type ProjectPageStaticPropsQuery = (
+  { __typename?: 'Query' }
+  & { projectCollection?: Maybe<(
+    { __typename?: 'ProjectCollection' }
+    & { items: Array<Maybe<(
+      { __typename?: 'Project' }
+      & Pick<Project, 'name' | 'longDescription' | 'stack' | 'linkRepo' | 'linkWebsite' | 'slug' | 'category'>
+      & { image?: Maybe<(
+        { __typename?: 'Asset' }
+        & Pick<Asset, 'url' | 'width' | 'height'>
+      )> }
+    )>> }
+  )> }
+);
+
+export type ProjectStaticPathQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type ProjectStaticPathQuery = (
+  { __typename?: 'Query' }
+  & { projectCollection?: Maybe<(
+    { __typename?: 'ProjectCollection' }
+    & { items: Array<Maybe<(
+      { __typename?: 'Project' }
+      & Pick<Project, 'slug'>
+    )>> }
+  )> }
+);
+
 
 export const HomePageStaticPropsDocument = gql`
     query homePageStaticProps {
+  projectCollection(limit: 4) {
+    items {
+      sys {
+        id
+      }
+      slug
+      name
+      shortDescription
+      category
+    }
+  }
+  talksCollection(limit: 4) {
+    items {
+      sys {
+        id
+      }
+      name
+      description
+      date
+      links
+    }
+  }
+}
+    `;
+export const ProjectStaticPropsDocument = gql`
+    query projectStaticProps {
   projectCollection {
     items {
       sys {
@@ -710,10 +822,14 @@ export const HomePageStaticPropsDocument = gql`
       }
       slug
       name
-      linkWebsite
       shortDescription
+      category
     }
   }
+}
+    `;
+export const TalktStaticPropsDocument = gql`
+    query talktStaticProps {
   talksCollection {
     items {
       sys {
@@ -727,6 +843,35 @@ export const HomePageStaticPropsDocument = gql`
   }
 }
     `;
+export const ProjectPageStaticPropsDocument = gql`
+    query projectPageStaticProps($slug: String!) {
+  projectCollection(limit: 1, where: {slug: $slug}) {
+    items {
+      name
+      image {
+        url
+        width
+        height
+      }
+      longDescription
+      stack
+      linkRepo
+      linkWebsite
+      slug
+      category
+    }
+  }
+}
+    `;
+export const ProjectStaticPathDocument = gql`
+    query projectStaticPath {
+  projectCollection {
+    items {
+      slug
+    }
+  }
+}
+    `;
 
 export type SdkFunctionWrapper = <T>(action: () => Promise<T>) => Promise<T>;
 
@@ -736,6 +881,18 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
   return {
     homePageStaticProps(variables?: HomePageStaticPropsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<HomePageStaticPropsQuery> {
       return withWrapper(() => client.request<HomePageStaticPropsQuery>(print(HomePageStaticPropsDocument), variables, requestHeaders));
+    },
+    projectStaticProps(variables?: ProjectStaticPropsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<ProjectStaticPropsQuery> {
+      return withWrapper(() => client.request<ProjectStaticPropsQuery>(print(ProjectStaticPropsDocument), variables, requestHeaders));
+    },
+    talktStaticProps(variables?: TalktStaticPropsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<TalktStaticPropsQuery> {
+      return withWrapper(() => client.request<TalktStaticPropsQuery>(print(TalktStaticPropsDocument), variables, requestHeaders));
+    },
+    projectPageStaticProps(variables: ProjectPageStaticPropsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<ProjectPageStaticPropsQuery> {
+      return withWrapper(() => client.request<ProjectPageStaticPropsQuery>(print(ProjectPageStaticPropsDocument), variables, requestHeaders));
+    },
+    projectStaticPath(variables?: ProjectStaticPathQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<ProjectStaticPathQuery> {
+      return withWrapper(() => client.request<ProjectStaticPathQuery>(print(ProjectStaticPathDocument), variables, requestHeaders));
     }
   };
 }

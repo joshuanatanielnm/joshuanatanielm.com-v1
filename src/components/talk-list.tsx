@@ -4,6 +4,7 @@ import { Box, Flex, HStack, Heading, Link, Spacer, Stack, Text, VStack } from '@
 
 import { FaArrowCircleRight } from "react-icons/fa";
 import type {Talks} from "@/generated/graphql"
+import format from "date-fns/format";
 
 interface TalkListProps {
   talks: Talks[];
@@ -17,10 +18,11 @@ const TalkList:React.FC<TalkListProps> = ({ talks }) => {
           talks.map((v, i) => (
             <React.Fragment key={v.sys?.id}>
               <Link href={`${v.links}`} w='full' isExternal>
-                <HStack cursor='pointer' bgColor='blue.900' color='white' w='full' p={4} borderRadius='lg'>
+                <HStack cursor='pointer' bgColor='blue.800' color='white' w='full' p={4} borderRadius='lg' _hover={{bgColor:'blue.900'}}>
                   <Box>
                     <Heading as='h3' size='lg'>{v.name}</Heading>
                     <Text>{v.description}</Text>
+                    <Text mt='2'>{format(new Date(v.date), "DD / MMMM / YYYY")}</Text>
                   </Box>
                   <Spacer/>
                   <Box fontSize='3xl'>

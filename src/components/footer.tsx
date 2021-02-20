@@ -20,7 +20,7 @@ const Footer:React.FC  = () => {
           </Box>
         </VStack>
         <Spacer/>
-        <HStack spacing="24px" pb={{base:'20px'}}>
+        <HStack spacing="24px" pb={{base:'30px', md:0}}>
           <VStack alignItems={{base:'flex-start', md:'flex-end'}}>
             <Heading size='md' as='h5'>Socials</Heading>
             <Link href="https://github.com/joshuanatanielnm" isExternal>
@@ -32,9 +32,6 @@ const Footer:React.FC  = () => {
             <Link href='https://www.linkedin.com/in/joshua-manuputty-8a22ba186/' isExternal>
               LinkedIn
             </Link>
-            <Link href='https://www.instagram.com/joshuanatanielm/' isExternal>
-              Instagram
-            </Link>
           </VStack>
 
           <VStack alignItems={{base:'flex-start', md:'flex-end'}}>
@@ -44,19 +41,14 @@ const Footer:React.FC  = () => {
                 About
               </Link>
             </NextLink>
-            <NextLink href="/project">
+            <NextLink href="/projects">
               <Link>
-                Project
+                Projects
               </Link>
             </NextLink>
-            <NextLink href="/talks">
+            <NextLink href="/talk">
               <Link>
                 Talks
-              </Link>
-            </NextLink>
-            <NextLink href="/blog">
-              <Link>
-                Blog
               </Link>
             </NextLink>
           </VStack>

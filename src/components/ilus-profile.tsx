@@ -1,13 +1,13 @@
 import * as React from "react";
 
-import { Icon } from "@chakra-ui/react";
-import type { IconProps } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
+import Image from 'next/image';
 
-const IlusProfile: React.FC<IconProps> = (props) => {
+const IlusProfile: React.FC = () => {
   return (
-    <Icon {...props}>
-      <img src="/public/ilus.png" alt="hellow"/>
-    </Icon>
+    <Box>
+      <Image src='/profileilus.png' alt='dadadaad' width="200" height="200" />
+    </Box>
   )
 }
 

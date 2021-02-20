@@ -6,13 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "codegen": "graphql-codegen --config codegen.yml"
+    "codegen": "env-cmd yarn graphql-codegen --config codegen.yml"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.3.2",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
     "@graphql-codegen/introspection": "^1.18.1",
+    "env-cmd": "^10.1.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.3.1",
