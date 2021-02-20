@@ -3,7 +3,7 @@ import * as React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Box, ChakraProvider, Container, Stack } from "@chakra-ui/react";
 
-import { AppContextProps } from "@/pages/store/app";
+import { AppContextProps } from "@/lib/store/app";
 import type { BoxProps } from "@chakra-ui/react";
 import Footer from '@/components/footer'
 import Head from "next/head";
