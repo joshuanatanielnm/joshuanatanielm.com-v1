@@ -34,10 +34,10 @@ const Projects: NextPage<ProjectPageProps> = ({project}) => {
         openGraph={{
           title: 'Projects',
           description: 'My recent project',
-          url: 'https://personal-website-fawn-two.vercel.app/projects',
+          url: 'https://joshuanatanielm.space/projects',
           images: [
             {
-              url: 'https://personal-website-fawn-two.vercel.app/favicon.png',
+              url: 'https://joshuanatanielm.space/favicon.png',
               width: 850,
               height: 650,
               alt: 'Profile Photo',
