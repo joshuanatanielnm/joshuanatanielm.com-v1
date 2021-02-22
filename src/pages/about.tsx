@@ -19,10 +19,10 @@ const About:React.FC = () => {
           </Heading>
           <Box fontSize={{base:'xl', md:'2xl'}} textAlign='left'>
             <Text >
-              I’am a self taught Website developer based in Surabaya, Indonesia, currently i working on my bachelor's degree in information system on Institut Teknologi Adhi Tama Surabaya and doing some freelance projects.
+              I’am a self taught Website developer based in <span style={{fontWeight:'bold'}}>Surabaya, Indonesia</span>, currently i working on my bachelor's degree in information system on <span style={{fontWeight:'bold'}}>Institut Teknologi Adhi Tama Surabaya</span> and doing some freelance projects.
             </Text>
             <Text>
-              i start learning about web dev since 2018, and start with backend development using php and laravel. but for now i’am more interest to explore about frontend development espicially using Reactjs.
+              i start learning about web dev since 2018, and start with backend development using php and laravel. but for now i spend more time to explore about frontend development espicially using Reactjs.
             </Text>
           </Box>
         </VStack>
