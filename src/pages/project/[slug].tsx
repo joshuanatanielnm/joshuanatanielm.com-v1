@@ -35,7 +35,7 @@ const ProjectPage:NextPage<ProjectPageProps> = ({project}) => {
   return (
     <>
       <Head>
-        <title>joshuanatanielm</title>
+        <title>{project.name}</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
       <Box fontFamily='poppins' bgGradient="linear(to-br, white, blue.100)"  borderRadius="xl">

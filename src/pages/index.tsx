@@ -37,14 +37,6 @@ const Home: NextPage<HomePageProps> = ({ project, talks }) => {
           title: 'Joshua Nathaniel M - Frontend Developer',
           description: 'Collage student that enjoy creating digital product',
           url: 'https://personal-website-fawn-two.vercel.app/',
-          images: [
-            {
-              url: 'https://personal-website-fawn-two.vercel.app/favicon.png',
-              width: 850,
-              height: 650,
-              alt: 'Profile Photo',
-            },
-          ],
         }}
       />
 
