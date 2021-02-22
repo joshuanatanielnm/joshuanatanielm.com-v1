@@ -17,7 +17,7 @@ const TalkList:React.FC<TalkListProps> = ({ talks }) => {
         {
           talks.map((v, i) => (
             <React.Fragment key={v.sys?.id}>
-              <Link href={`${v.links}`} w='full' isExternal>
+              <Link href={`${v.links}`} w='full' isExternal _hover={{textDecor:'none'}}>
                 <HStack cursor='pointer' bgColor='blue.800' color='white' w='full' p={4} borderRadius='lg' _hover={{bgColor:'blue.900'}}>
                   <Box>
                     <Heading as='h3' size='lg'>{v.name}</Heading>
