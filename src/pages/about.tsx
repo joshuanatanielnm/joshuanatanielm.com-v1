@@ -17,10 +17,10 @@ const About:React.FC = () => {
         openGraph={{
           title: 'About Me',
           description: 'Collage student that enjoy creating digital product',
-          url: 'https://personal-website-fawn-two.vercel.app/about',
+          url: 'https://joshuanatanielm.space/about',
           images: [
             {
-              url: 'https://personal-website-fawn-two.vercel.app/favicon.png',
+              url: 'https://joshuanatanielm.space/favicon.png',
               width: 850,
               height: 650,
               alt: 'Profile Photo',
