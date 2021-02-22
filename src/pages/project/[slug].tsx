@@ -47,7 +47,7 @@ const ProjectPage:NextPage<ProjectPageProps> = ({project}) => {
           url: `https://personal-website-fawn-two.vercel.app/projects/${project.slug}`,
           images: [
             {
-              url: `${project.image.url}`,
+              url: `https://personal-website-fawn-two.vercel.app/favicon.png`,
               width: 850,
               height: 650,
               alt: `${project.name} photo`,
