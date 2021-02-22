@@ -26,8 +26,8 @@ const Navbar: React.FC = () => {
           <NextLink href="/projects">
             <Link>Projects</Link>
           </NextLink>
-          <NextLink href="/talk">
-            <Link>Talks</Link>
+          <NextLink href="/speaks">
+            <Link>Speaks</Link>
           </NextLink>
         </HStack>
       </HStack>

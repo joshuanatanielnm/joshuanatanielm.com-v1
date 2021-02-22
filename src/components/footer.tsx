@@ -46,9 +46,9 @@ const Footer:React.FC  = () => {
                 Projects
               </Link>
             </NextLink>
-            <NextLink href="/talk">
+            <NextLink href="/speaks">
               <Link>
-                Talks
+                Speaks
               </Link>
             </NextLink>
           </VStack>

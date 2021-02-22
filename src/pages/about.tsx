@@ -2,6 +2,7 @@ import { Box, Button, Divider, Heading, Link, Stack, Text, VStack } from '@chakr
 
 import Head from 'next/head'
 import IlusProfile from '@/components/ilus-profile'
+import { NextSeo } from "next-seo";
 import React from 'react'
 
 const About:React.FC = () => {
@@ -11,6 +12,23 @@ const About:React.FC = () => {
         <title>About</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
+
+      <NextSeo
+        openGraph={{
+          title: 'About Me',
+          description: 'Collage student that enjoy creating digital product',
+          url: 'https://personal-website-fawn-two.vercel.app/about',
+          images: [
+            {
+              url: 'https://personal-website-fawn-two.vercel.app/favicon.png',
+              width: 850,
+              height: 650,
+              alt: 'Profile Photo',
+            },
+          ],
+        }}
+      />
+
       <Box fontFamily='poppins' bgGradient="linear(to-br, white, blue.100)"  borderRadius="xl" p={{base:8, md:24}} spacing={6}>
         <VStack textAlign='center' py='50px' spacing='24px'>
           <IlusProfile />

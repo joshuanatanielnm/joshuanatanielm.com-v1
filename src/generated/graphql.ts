@@ -763,7 +763,7 @@ export type ProjectPageStaticPropsQuery = (
     { __typename?: 'ProjectCollection' }
     & { items: Array<Maybe<(
       { __typename?: 'Project' }
-      & Pick<Project, 'name' | 'longDescription' | 'stack' | 'linkRepo' | 'linkWebsite' | 'slug' | 'category'>
+      & Pick<Project, 'name' | 'shortDescription' | 'longDescription' | 'stack' | 'linkRepo' | 'linkWebsite' | 'slug' | 'category'>
       & { image?: Maybe<(
         { __typename?: 'Asset' }
         & Pick<Asset, 'url' | 'width' | 'height'>
@@ -853,6 +853,7 @@ export const ProjectPageStaticPropsDocument = gql`
         width
         height
       }
+      shortDescription
       longDescription
       stack
       linkRepo
