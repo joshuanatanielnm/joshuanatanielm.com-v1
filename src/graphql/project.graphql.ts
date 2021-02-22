@@ -10,6 +10,7 @@ export const PROJECT_PAGE_STATIC_PROPS = gql`
           width
           height
         }
+        shortDescription
         longDescription
         stack
         linkRepo

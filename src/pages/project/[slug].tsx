@@ -3,6 +3,7 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Head from 'next/head'
+import { NextSeo } from "next-seo";
 import {Project} from '@/generated/graphql'
 import React from 'react'
 import { cms } from "@/lib/cms";
@@ -35,9 +36,26 @@ const ProjectPage:NextPage<ProjectPageProps> = ({project}) => {
   return (
     <>
       <Head>
-        <title>joshuanatanielm</title>
+        <title>{project.name}</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
+
+      <NextSeo
+        openGraph={{
+          title: `${project.name}`,
+          description: `${project.shortDescription}`,
+          url: `https://personal-website-fawn-two.vercel.app/projects/${project.slug}`,
+          images: [
+            {
+              url: `https://personal-website-fawn-two.vercel.app/favicon.png`,
+              width: 850,
+              height: 650,
+              alt: `${project.name} photo`,
+            },
+          ],
+        }}
+      />
+
       <Box fontFamily='poppins' bgGradient="linear(to-br, white, blue.100)"  borderRadius="xl">
         <Stack p={8} spacing={6}>
           <Heading fontFamily='poppins' as='h2' size='xl' textAlign='center'>

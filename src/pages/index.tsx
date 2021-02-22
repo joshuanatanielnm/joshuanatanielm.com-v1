@@ -4,6 +4,7 @@ import {Project, Talks} from '@/generated/graphql'
 
 import Head from 'next/head'
 import NextLink from "next/link";
+import { NextSeo } from "next-seo";
 import ProjectList from '@/components/project-list'
 import TalkList from '@/components/talk-list'
 import { cms } from "@/lib/cms";
@@ -30,6 +31,23 @@ const Home: NextPage<HomePageProps> = ({ project, talks }) => {
         <title>joshuanatanielm</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
+
+      <NextSeo
+        openGraph={{
+          title: 'Joshua Nathaniel M - Frontend Developer',
+          description: 'Collage student that enjoy creating digital product',
+          url: 'https://personal-website-fawn-two.vercel.app/',
+          images: [
+            {
+              url: 'https://personal-website-fawn-two.vercel.app/favicon.png',
+              width: 850,
+              height: 650,
+              alt: 'Profile Photo',
+            },
+          ],
+        }}
+      />
+
       <Box fontFamily='poppins' >
         <VStack textAlign='center' py='50px' spacing='24px'>
           <Heading fontFamily='poppins' as='h1' size='2xl'>
