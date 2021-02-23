@@ -34,12 +34,12 @@ const Home: NextPage<HomePageProps> = ({ project, talks }) => {
 
       <NextSeo
         openGraph={{
-          title: 'Joshua Nathaniel M - Frontend Developer',
+          title: 'Joshua Nathaniel M - Software Developer',
           description: 'Collage student that enjoy creating digital product',
-          url: 'https://personal-website-fawn-two.vercel.app/',
+          url: 'https://joshuanatanielm.space/',
           images: [
             {
-              url: 'https://personal-website-fawn-two.vercel.app/favicon.png',
+              url: 'https://joshuanatanielm.space/favicon.png',
               width: 850,
               height: 650,
               alt: 'Profile Photo',
@@ -72,9 +72,9 @@ const Home: NextPage<HomePageProps> = ({ project, talks }) => {
             <ViewAllButton title='See all projects' href='/projects'/>
           </Box>
           <Box>
-            <Heading as='h2' size='xl' mb={2}>Recent Talks</Heading>
+            <Heading as='h2' size='xl' mb={2}>Recent Speaks</Heading>
             <TalkList talks={talks}/>
-            <ViewAllButton title='See all talks' href='/talk'/>
+            <ViewAllButton title='See all speaks' href='/speaks'/>
           </Box>
         </Stack>
       </Box>

@@ -34,10 +34,10 @@ const Speaks: NextPage<TalkPageProps> = ({talk}) => {
         openGraph={{
           title: 'Speaks',
           description: 'joshuanatanielm recent speaks in meetups and other events',
-          url: 'https://personal-website-fawn-two.vercel.app/speaks',
+          url: 'https://joshuanatanielm.space/speaks',
           images: [
             {
-              url: 'https://personal-website-fawn-two.vercel.app/favicon.png',
+              url: 'https://joshuanatanielm.space/favicon.png',
               width: 850,
               height: 650,
               alt: 'Profile Photo',
