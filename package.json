@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "env-cmd yarn next build",
     "start": "next start",
     "codegen": "env-cmd yarn graphql-codegen --config codegen.yml"
   },
