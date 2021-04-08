@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Box, Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, Icon, IconButton, Link, VStack, useDisclosure } from "@chakra-ui/react";
+import { Box, Button, Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, Icon, IconButton, Link, VStack, useDisclosure } from "@chakra-ui/react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 import NextLink from "next/link";
@@ -30,21 +30,26 @@ const MobileDrawer:React.FC = () => {
         <DrawerOverlay>
           <DrawerContent>
             <DrawerBody>
-              <VStack>
+              <VStack spacing="4" py="5">
+                <NextLink href="/">
+                  <Button w="full" colorScheme="gray" size="md">
+                    Home
+                  </Button>
+                </NextLink>
                 <NextLink href="/about">
-                  <Link>
+                  <Button w="full" colorScheme="gray" size="md">
                     About
-                  </Link>
+                  </Button>
                 </NextLink>
                 <NextLink href="/projects">
-                  <Link>
+                  <Button w="full" colorScheme="gray" size="md">
                     Project
-                  </Link>
+                  </Button>
                 </NextLink>
                 <NextLink href="/speaks">
-                  <Link>
+                  <Button w="full" colorScheme="gray" size="md">
                     Speaks
-                  </Link>
+                  </Button>
                 </NextLink>
               </VStack>
             </DrawerBody>
