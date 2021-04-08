@@ -43,7 +43,7 @@ const MobileDrawer:React.FC = () => {
                 </NextLink>
                 <NextLink href="/projects">
                   <Button w="full" colorScheme="gray" size="md">
-                    Project
+                    Projects
                   </Button>
                 </NextLink>
                 <NextLink href="/speaks">
