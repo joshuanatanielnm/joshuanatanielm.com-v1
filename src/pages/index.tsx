@@ -54,7 +54,7 @@ const Home: NextPage<HomePageProps> = ({ project, talks }) => {
             Hello i'am Jojo. 👋
           </Heading>
           <Box w={{md:2/3}} fontSize='2xl'>
-            students who want to be software developer
+            Currently working as a Associate Product Engineer at <br/><Link href="https://zero-one-group.com/" isExternal fontWeight='medium'>Zero One Group</Link>
           </Box>
         </VStack>
         <Stack bgGradient="linear(to-br, white, blue.100)"  borderRadius="xl" p={8} spacing={6}>
