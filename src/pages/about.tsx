@@ -33,7 +33,7 @@ const About: React.FC = () => {
         <VStack textAlign='center' py='50px' spacing='24px'>
           <IlusProfile />
           <Heading fontFamily='poppins' as='h1' size='2xl'>
-            Hello All i'am Jojo. 👋
+            Hello i'am Jojo. 👋
           </Heading>
           <Box fontSize={{ base: 'xl', md: '2xl' }} textAlign='left'>
             <Text >
