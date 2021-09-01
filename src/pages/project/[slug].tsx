@@ -85,7 +85,9 @@ const ProjectPage: NextPage<ProjectPageProps> = ({ project }) => {
               width="full"
               onLoad={() => setLoaded(false)}
             />
-            {loaded && <Skeleton w="full" height="400px" />}
+            {loaded && (
+              <Skeleton w="full" height={{ base: "100px", md: "400px" }} />
+            )}
           </VStack>
           <Stack>
             <Heading fontFamily="poppins" as="h3" size="lg">
