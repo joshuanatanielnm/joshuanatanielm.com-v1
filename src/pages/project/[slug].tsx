@@ -57,10 +57,10 @@ const ProjectPage: NextPage<ProjectPageProps> = ({ project }) => {
         openGraph={{
           title: `${project.name}`,
           description: `${project.shortDescription}`,
-          url: `https://joshuanatanielm.space/projects/${project.slug}`,
+          url: `https://joshuanatanielm.com/projects/${project.slug}`,
           images: [
             {
-              url: `https://joshuanatanielm.space/favicon.png`,
+              url: `https://joshuanatanielm.com/favicon.png`,
               width: 850,
               height: 650,
               alt: `${project.name} photo`,

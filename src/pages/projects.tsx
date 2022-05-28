@@ -1,11 +1,11 @@
-import { Box, Heading, Stack, VStack } from '@chakra-ui/react';
+import { Box, Heading, Stack, VStack } from "@chakra-ui/react";
 import type { GetStaticProps, NextPage } from "next";
 
-import Head from 'next/head'
+import Head from "next/head";
 import { NextSeo } from "next-seo";
-import { Project } from '@/generated/graphql'
-import ProjectList from '@/components/project-list'
-import React from 'react'
+import { Project } from "@/generated/graphql";
+import ProjectList from "@/components/project-list";
+import React from "react";
 import { cms } from "@/lib/cms";
 
 interface ProjectPageProps {
@@ -21,8 +21,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Projects: NextPage<ProjectPageProps> = ({project}) => {
-
+const Projects: NextPage<ProjectPageProps> = ({ project }) => {
   return (
     <>
       <Head>
@@ -32,29 +31,33 @@ const Projects: NextPage<ProjectPageProps> = ({project}) => {
 
       <NextSeo
         openGraph={{
-          title: 'Projects',
-          description: 'My recent project',
-          url: 'https://joshuanatanielm.space/projects',
+          title: "Projects",
+          description: "My recent project",
+          url: "https://joshuanatanielm.com/projects",
           images: [
             {
-              url: 'https://joshuanatanielm.space/favicon.png',
+              url: "https://joshuanatanielm.com/favicon.png",
               width: 850,
               height: 650,
-              alt: 'Profile Photo',
+              alt: "Profile Photo",
             },
           ],
         }}
       />
 
-      <Box fontFamily='poppins' bgGradient="linear(to-br, white, blue.100)"  borderRadius="xl">
+      <Box
+        fontFamily="poppins"
+        bgGradient="linear(to-br, white, blue.100)"
+        borderRadius="xl"
+      >
         <Stack p={8} spacing={6}>
-          <Heading fontFamily='poppins' as='h2' size='xl'>
+          <Heading fontFamily="poppins" as="h2" size="xl">
             All Projects
           </Heading>
-          <ProjectList project={project}/>
+          <ProjectList project={project} />
         </Stack>
       </Box>
     </>
-  )
-}
-export default Projects
+  );
+};
+export default Projects;
