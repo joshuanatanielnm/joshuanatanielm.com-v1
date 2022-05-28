@@ -1,12 +1,21 @@
-import { Box, Button, Divider, Heading, Link, Stack, Text, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Divider,
+  Heading,
+  Link,
+  Stack,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import type { GetStaticProps, NextPage } from "next";
-import {Project, Talks} from '@/generated/graphql'
+import { Project, Talks } from "@/generated/graphql";
 
-import Head from 'next/head'
+import Head from "next/head";
 import NextLink from "next/link";
 import { NextSeo } from "next-seo";
-import ProjectList from '@/components/project-list'
-import TalkList from '@/components/talk-list'
+import ProjectList from "@/components/project-list";
+import TalkList from "@/components/talk-list";
 import { cms } from "@/lib/cms";
 
 interface HomePageProps {
@@ -18,11 +27,10 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       project: data.projectCollection.items,
-      talks: data.talksCollection.items
+      talks: data.talksCollection.items,
     },
   };
 };
-
 
 const Home: NextPage<HomePageProps> = ({ project, talks }) => {
   return (
@@ -34,59 +42,79 @@ const Home: NextPage<HomePageProps> = ({ project, talks }) => {
 
       <NextSeo
         openGraph={{
-          title: 'Joshua Nathaniel M - Software Developer',
-          description: 'Collage student that enjoy creating digital product',
-          url: 'https://joshuanatanielm.space/',
+          title: "Joshua Nathaniel M - Software Developer",
+          description: "Collage student that enjoy creating digital product",
+          url: "https://joshuanatanielm.com/",
           images: [
             {
-              url: 'https://joshuanatanielm.space/favicon.png',
+              url: "https://joshuanatanielm.com/favicon.png",
               width: 850,
               height: 650,
-              alt: 'Profile Photo',
+              alt: "Profile Photo",
             },
           ],
         }}
       />
 
-      <Box fontFamily='poppins' >
-        <VStack textAlign='center' py='50px' spacing='24px'>
-          <Heading fontFamily='poppins' as='h1' size='2xl'>
+      <Box fontFamily="poppins">
+        <VStack textAlign="center" py="50px" spacing="24px">
+          <Heading fontFamily="poppins" as="h1" size="2xl">
             Hello i'am Jojo. 👋
           </Heading>
-          <Box w={{md:2/3}} fontSize='2xl'>
-            Currently working as a Product Engineer I at <br/><Link href="https://zero-one-group.com/" isExternal fontWeight='medium'>Zero One Group</Link>
+          <Box w={{ md: 2 / 3 }} fontSize="2xl">
+            I am a frontend developer that love to create user interface using
+            React
+            {/* Currently working as a Product Engineer I at <br/><Link href="https://zero-one-group.com/" isExternal fontWeight='medium'>Zero One Group</Link> */}
           </Box>
         </VStack>
-        <Stack bgGradient="linear(to-br, white, blue.100)"  borderRadius="xl" p={8} spacing={6}>
+        <Stack
+          bgGradient="linear(to-br, white, blue.100)"
+          borderRadius="xl"
+          p={8}
+          spacing={6}
+        >
           <Box>
-            <Heading as='h2' size='xl' mb={2}>About</Heading>
-            <Text fontSize='xl'>
-              I’am a self taught Website developer based in <span style={{fontWeight: 'bold'}}>Surabaya, ID</span>. Currently i working on my bachelor's degree in information system on <span style={{fontWeight: 'bold'}}>Institut Teknologi Adhi Tama Surabaya</span> and doing some freelance projects.
+            <Heading as="h2" size="xl" mb={2}>
+              About
+            </Heading>
+            <Text fontSize="xl">
+              I am a frontend developer based in Surabaya, Indonesia (ID). Now
+              I'm in my 8th semester working on my bachelor's degree in
+              information system on Institut Teknologi Adhi Tama Surabaya. I
+              love to create user interface using react
             </Text>
-            <ViewAllButton title='Know me more' href='/about'/>
+            <ViewAllButton title="Know me more" href="/about" />
           </Box>
-          <Divider/>
+          <Divider />
           <Box>
-            <Heading as='h2' size='xl' mb={2}>Recent Projects</Heading>
-            <ProjectList project={project}/>
-            <ViewAllButton title='See all projects' href='/projects'/>
+            <Heading as="h2" size="xl" mb={2}>
+              Recent Projects
+            </Heading>
+            <ProjectList project={project} />
+            <ViewAllButton title="See all projects" href="/projects" />
           </Box>
           <Box>
-            <Heading as='h2' size='xl' mb={2}>Recent Speaks</Heading>
-            <TalkList talks={talks}/>
-            <ViewAllButton title='See all speaks' href='/speaks'/>
+            <Heading as="h2" size="xl" mb={2}>
+              Recent Speaks
+            </Heading>
+            <TalkList talks={talks} />
+            <ViewAllButton title="See all speaks" href="/speaks" />
           </Box>
         </Stack>
       </Box>
     </>
-  )
-}
+  );
+};
 
-function ViewAllButton({ title, href }){
-  return(
+function ViewAllButton({ title, href }) {
+  return (
     <Box mt={3}>
       <NextLink href={href} passHref>
-        <Button float="right" w={{base:'full', md:'initial'}} bgColor='gray.700' color='white'
+        <Button
+          float="right"
+          w={{ base: "full", md: "initial" }}
+          bgColor="gray.700"
+          color="white"
           _hover={{ bg: "#000000" }}
           _active={{
             bg: "#000000",
@@ -98,9 +126,7 @@ function ViewAllButton({ title, href }){
         </Button>
       </NextLink>
     </Box>
-  )
+  );
 }
 
-
-
-export default Home
+export default Home;

@@ -18,10 +18,10 @@ const About: React.FC = () => {
         openGraph={{
           title: "About Me",
           description: "Collage student that enjoy creating digital product",
-          url: "https://joshuanatanielm.space/about",
+          url: "https://joshuanatanielm.com/about",
           images: [
             {
-              url: "https://joshuanatanielm.space/favicon.png",
+              url: "https://joshuanatanielm.com/favicon.png",
               width: 850,
               height: 650,
               alt: "Profile Photo",
@@ -53,19 +53,16 @@ const About: React.FC = () => {
           </Heading>
           <Box fontSize={{ base: "xl", md: "2xl" }} textAlign="left">
             <Text>
-              I’am a self taught Website developer based in{" "}
-              <span style={{ fontWeight: "bold" }}>Surabaya, Indonesia</span>,
-              currently i working on my bachelor's degree in information system
-              on{" "}
-              <span style={{ fontWeight: "bold" }}>
-                Institut Teknologi Adhi Tama Surabaya
-              </span>{" "}
-              and doing some freelance projects.
-            </Text>
-            <Text>
-              i start learning about web dev since 2018, and start with backend
-              development using php and laravel. but for now i spend more time
-              to explore about frontend development espicially using Reactjs.
+              I am a frontend developer based in Surabaya, Indonesia (ID). Now
+              I'm in my 8th semester working on my bachelor's degree in
+              information system on Institut Teknologi Adhi Tama Surabaya. I
+              love to create user interface using react, currently working as a
+              Product Engineer - Zero One Group. My daily role is to create user
+              interface using ReactJS, write unit test, handle large data
+              efficiently, and Integrate endpoint. Sometimes I also do back end
+              stuff using NodeJS if needed. Working on various projects in the
+              agency got me used to learning new technologies, to solve client
+              problems.
             </Text>
           </Box>
         </VStack>
