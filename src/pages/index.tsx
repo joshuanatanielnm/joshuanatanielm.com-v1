@@ -42,8 +42,8 @@ const Home: NextPage<HomePageProps> = ({ project, talks }) => {
 
       <NextSeo
         openGraph={{
-          title: "Joshua Nathaniel M - Software Developer",
-          description: "Collage student that enjoy creating digital product",
+          title: "Joshua Nathaniel M - Frontend Developer",
+          description: "College student that enjoy creating digital product",
           url: "https://joshuanatanielm.com/",
           images: [
             {

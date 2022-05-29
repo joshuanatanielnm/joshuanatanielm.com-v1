@@ -17,7 +17,7 @@ const About: React.FC = () => {
       <NextSeo
         openGraph={{
           title: "About Me",
-          description: "Collage student that enjoy creating digital product",
+          description: "College student that enjoy creating digital product",
           url: "https://joshuanatanielm.com/about",
           images: [
             {
