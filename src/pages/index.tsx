@@ -3,7 +3,6 @@ import {
   Button,
   Divider,
   Heading,
-  Link,
   Stack,
   Text,
   VStack,
@@ -64,7 +63,6 @@ const Home: NextPage<HomePageProps> = ({ project, talks }) => {
           <Box w={{ md: 2 / 3 }} fontSize="2xl">
             I am a frontend developer that love to create user interface using
             React
-            {/* Currently working as a Product Engineer I at <br/><Link href="https://zero-one-group.com/" isExternal fontWeight='medium'>Zero One Group</Link> */}
           </Box>
         </VStack>
         <Stack

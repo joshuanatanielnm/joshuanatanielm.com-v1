@@ -1,4 +1,4 @@
-import { Box, Heading, Stack, VStack } from "@chakra-ui/react";
+import { Box, Heading, Stack } from "@chakra-ui/react";
 import type { GetStaticProps, NextPage } from "next";
 
 import Head from "next/head";
