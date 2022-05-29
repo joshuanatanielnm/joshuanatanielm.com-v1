@@ -813,7 +813,10 @@ export type HomePageStaticPropsQuery = (
       & { sys: (
         { __typename?: 'Sys' }
         & Pick<Sys, 'id'>
-      ) }
+      ), image?: Maybe<(
+        { __typename?: 'Asset' }
+        & Pick<Asset, 'url' | 'width' | 'height'>
+      )> }
     )>> }
   )>, talksCollection?: Maybe<(
     { __typename?: 'TalksCollection' }
@@ -841,7 +844,10 @@ export type ProjectStaticPropsQuery = (
       & { sys: (
         { __typename?: 'Sys' }
         & Pick<Sys, 'id'>
-      ) }
+      ), image?: Maybe<(
+        { __typename?: 'Asset' }
+        & Pick<Asset, 'url' | 'width' | 'height'>
+      )> }
     )>> }
   )> }
 );
@@ -906,6 +912,11 @@ export const HomePageStaticPropsDocument = gql`
       sys {
         id
       }
+      image {
+        url
+        width
+        height
+      }
       slug
       name
       shortDescription
@@ -931,6 +942,11 @@ export const ProjectStaticPropsDocument = gql`
     items {
       sys {
         id
+      }
+      image {
+        url
+        width
+        height
       }
       slug
       name

@@ -7,6 +7,11 @@ export const HOME_PAGE_STATIC_PROPS = gql`
         sys {
           id
         }
+        image {
+          url
+          width
+          height
+        }
         slug
         name
         shortDescription
@@ -33,6 +38,11 @@ export const PROJECT_STATIC_PROPS = gql`
       items {
         sys {
           id
+        }
+        image {
+          url
+          width
+          height
         }
         slug
         name
