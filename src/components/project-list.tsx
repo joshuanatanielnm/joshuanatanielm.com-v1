@@ -21,7 +21,6 @@ interface ProjectListProps {
 
 const ProjectList: React.FC<ProjectListProps> = ({ project }) => {
   const [loaded, setLoaded] = React.useState(true);
-  console.log(project);
   return (
     <>
       <Grid
