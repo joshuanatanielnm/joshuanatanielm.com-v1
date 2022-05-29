@@ -24,7 +24,10 @@ const ProjectList: React.FC<ProjectListProps> = ({ project }) => {
   console.log(project);
   return (
     <>
-      <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+      <Grid
+        templateColumns={{ base: "repeat(1, 1fr)", lg: "repeat(2, 1fr)" }}
+        gap={4}
+      >
         {project.map((v, i) => (
           <React.Fragment key={v.sys?.id || v.slug}>
             <NextLink href={`/project/${v.slug}`}>
