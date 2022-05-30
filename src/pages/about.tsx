@@ -1,4 +1,12 @@
-import { Box, Heading, Text, VStack, Skeleton } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Text,
+  VStack,
+  Skeleton,
+  Stack,
+  Link,
+} from "@chakra-ui/react";
 
 import Head from "next/head";
 import Image from "next/image";
@@ -48,23 +56,44 @@ const About: React.FC = () => {
             />
             {loaded && <Skeleton w="full" width="200" height="200" />}
           </Box>
-          <Heading fontFamily="poppins" as="h1" size="2xl">
+          <Heading fontFamily="poppins" as="h1" size="2xl" pb="2">
             Hello i'am Jojo. 👋
           </Heading>
-          <Box fontSize={{ base: "xl", md: "2xl" }} textAlign="left">
+          <Stack
+            fontSize={{ base: "xl", md: "2xl" }}
+            textAlign="left"
+            spacing={4}
+          >
             <Text>
               I am a frontend developer based in Surabaya, Indonesia (ID). Now
               I'm in my 8th semester working on my bachelor's degree in
-              information system on Institut Teknologi Adhi Tama Surabaya. I
-              love to create user interface using react, currently working as a
-              Product Engineer - Zero One Group. My daily role is to create user
-              interface using ReactJS, write unit test, handle large data
+              information system on Institut Teknologi Adhi Tama Surabaya.
+            </Text>
+            <Text>
+              I love to create user interface using react, currently working as
+              a Product Engineer - Zero One Group. My daily role is to create
+              user interface using ReactJS, write unit test, handle large data
               efficiently, and Integrate endpoint. Sometimes I also do back end
               stuff using NodeJS if needed. Working on various projects in the
               agency got me used to learning new technologies, to solve client
               problems.
             </Text>
-          </Box>
+            <Text>
+              View my resume in{" "}
+              <Link href="/resume.pdf" color="blue.600" passHref>
+                <a target="_blank">PDF format</a>
+              </Link>{" "}
+              or online via{" "}
+              <Link
+                href="https://resume.io/r/JiQEzeD3Y"
+                color="blue.600"
+                passHref
+              >
+                <a target="_blank">resume.io</a>
+              </Link>
+              .
+            </Text>
+          </Stack>
         </VStack>
       </Box>
     </>
